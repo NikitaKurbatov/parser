@@ -1,9 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hellow world!");
-        Student Nikita = new Student();
-        Nikita.setName("Nikita");
-        Nikita.setAge(12);
-        Nikita.say();
+        areaCircle circle = new areaCircle();
+
+        circle.rasAreaCircle(12);
+        System.out.println();
     }
 }
