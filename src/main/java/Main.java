@@ -77,7 +77,6 @@ public class Main {
         }
         root.setName(mainName);
         root.setPeople(peopleList);
-        //Все получится
 //        root.getPeople().stream().filter(people -> {
 //            return people.getAge() == 222;
 //        }).forEach(people -> {
