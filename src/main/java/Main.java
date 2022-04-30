@@ -4,7 +4,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import javax.print.Doc;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import java.util.ArrayList;
@@ -68,7 +67,7 @@ public class Main {
                         break;
                     }
                     case "age": {
-                        age = Integer.valueOf(elementChild.item(j).getTextContent());
+                        age = Integer.parseInt(elementChild.item(j).getTextContent());
                         break;
                     }
                 }
@@ -78,7 +77,7 @@ public class Main {
         }
         root.setName(mainName);
         root.setPeople(peopleList);
-
+        //Все получится
 //        root.getPeople().stream().filter(people -> {
 //            return people.getAge() == 222;
 //        }).forEach(people -> {
