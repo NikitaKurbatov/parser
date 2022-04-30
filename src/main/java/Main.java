@@ -9,13 +9,14 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Main {
 
     public static void main(String[] args) throws Exception {
         Root root = new Root();
         Document doc;
         try {
-            doc = buildDocument();
+            doc = openDocument();
         } catch (Exception e) {
             System.out.println("Don open file " + e.toString());
             return;
@@ -32,11 +33,9 @@ public class Main {
             switch (rootChild.item(i).getNodeName()) {
                 case "name": {
                     mainName = rootChild.item(i).getTextContent();
-//                    System.out.println("mainName: " + mainName);
                 }
                 case "people": {
                     peopleNode = rootChild.item(i);
-//                    System.out.println("peopleNode " + peopleNode);
                 }
             }
         }
@@ -85,11 +84,11 @@ public class Main {
 
         System.out.println("Root " + root.toString());
     }
-
-
-    private static Document buildDocument() throws Exception {
+    private static Document openDocument() throws Exception {
         File file = new File("test.xml");
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         return dbf.newDocumentBuilder().parse(file);
     }
+
+
 }
